@@ -97,28 +97,6 @@ class MainWindow(QMainWindow):
 
         self.output_text_edit.setPlainText(summary)
 
-        # Calculate accuracy
-        reference_summary = """sriwijaya adalah kerajaan bahari historis yang berasal dari Pulau Sumatra sekitar abad ke-7 sampai abad ke-11.
-Kehadirannya banyak memberi pengaruh pada perkembangan sejarah Asia Tenggara (terutama dalam kawasan Nusantara barat).
-Dalam bahasa Sanskerta, sri berarti "bercahaya" atau "gemilang", dan vijaya berarti "kemenangan" atau "kejayaan".
-Lokasi ibukota Sriwijaya dapat dengan akurat disimpulkan berada di Kota Palembang, tepatnya di muara Sungai Musi.
-Bukti awal mengenai keberadaan kerajaan ini berasal dari abad ke-7; seorang pendeta Tiongkok dari Dinasti Tang, I Tsing, menulis bahwa ia mengunjungi Sriwijaya tahun 671 dan tinggal selama 6 bulan.
-Meskipun sempat dianggap sebagai talasokrasi (kerajaan berbasis maritim), penelitian baru tentang catatan yang tersedia menunjukkan bahwa Sriwijaya merupakan negara berbasis darat daripada kekuatan maritim.
-Armada laut memang tersedia tetapi bertindak sebagai dukungan logistik untuk memfasilitasi proyeksi kekuatan darat.
-Menanggapi perubahan ekonomi maritim Asia, dan terancam oleh hilangnya negara bawahannya, kerajaan-kerajaan disekitar selat Malaka mengembangkan strategi angkatan laut untuk menunda kemerosotannya.
-Strategi angkatan laut kerajaan-kerajaan disekitar selat Malaka bersifat menghukum untuk memaksa kapal-kapal dagang datang ke pelabuhan mereka.
-Setelah itu, kerajaan ini terlupakan dan keberadaannya baru diketahui kembali lewat publikasi tahun 1918 oleh sejarawan Prancis George Cœdès dari École française d'Extrême-Orient."""
-        
-        generated_summary = summary.split('.\n')
-        reference_summary = reference_summary.split('.\n')
-
-        correct_sentences = sum(1 for sent in generated_summary if sent in reference_summary)
-        total_sentences = len(reference_summary)
-
-        accuracy = correct_sentences / total_sentences * 100
-        print(f"Accuracy: {accuracy}%")
-
-
 if __name__ == "__main__":
     app = QApplication([])
     window = MainWindow()
